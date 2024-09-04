@@ -1,0 +1,20 @@
+docker exec -it cassandra-1 bash -c 'cqlsh'
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 3.11.17 | CQL spec 3.4.4 | Native protocol v4]
+Use HELP for help.
+cqlsh> 
+cqlsh> CREATE KEYSPACE IF NOT EXISTS big_data WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
+cqlsh> use big_data;
+Question 6.1
+cqlsh:bigdata2> CREATE TABLE IF NOT EXISTS big_data.users (
+    UserID UUID PRIMARY KEY,
+    Username TEXT,
+    Email TEXT,
+    Password TEXT,
+    SubscriptionType TEXT,
+    City TEXT,
+    Country TEXT,
+    Age INT
+);
+pico task6.py 
+//copy Task6.py
